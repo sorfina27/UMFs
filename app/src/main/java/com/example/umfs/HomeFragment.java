@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.umfs.databinding.FragmentHomeBinding;
@@ -58,6 +59,7 @@ public class HomeFragment extends Fragment {
         layoutManager.setReverseLayout(true);
         layoutManager.setStackFromEnd(true);
         binding.postRV.setAdapter(adapter);
+        binding.postRV.addItemDecoration(new DividerItemDecoration(binding.postRV.getContext(), DividerItemDecoration.VERTICAL));
 
         database.getReference().child("posts")
                 .addValueEventListener(new ValueEventListener() {
