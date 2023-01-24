@@ -163,7 +163,6 @@ public class EditProfileActivity extends AppCompatActivity {
                                         picUpdates.put("ProfilePicture", imageUrl);
                                         userRef.updateChildren(picUpdates);
                                         uploadProfile();
-                                        uploadProfile();
 
                                         Toast.makeText(EditProfileActivity.this, "Upload Successful", Toast.LENGTH_LONG).show();
                                     }
