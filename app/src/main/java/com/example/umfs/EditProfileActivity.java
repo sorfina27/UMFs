@@ -162,7 +162,6 @@ public class EditProfileActivity extends AppCompatActivity {
                                         Map<String, Object> picUpdates = new HashMap<>();
                                         picUpdates.put("ProfilePicture", imageUrl);
                                         userRef.updateChildren(picUpdates);
-
                                         uploadProfile();
 
                                         Toast.makeText(EditProfileActivity.this, "Upload Successful", Toast.LENGTH_LONG).show();

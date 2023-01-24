@@ -53,12 +53,13 @@
 
     <EditText
         android:id="@+id/ETPasswordLogin"
-        android:layout_width="336dp"
+        android:layout_width="335dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/text_box_edit"
         android:drawableLeft="@drawable/password"
-        android:hint="  Password"
+        android:drawablePadding="12dp"
+        android:hint= "Password"
         android:inputType="textPassword"
         android:padding="12dp"
         android:textSize="20dp"
