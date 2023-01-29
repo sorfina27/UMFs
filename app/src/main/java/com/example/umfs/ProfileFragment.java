@@ -115,7 +115,7 @@ public class ProfileFragment extends Fragment {
         String currentUserID = currentUser.getUid();
 
         try {
-            //TODO : Cloud Storage reference, to store profile pictures of user
+            //Cloud Storage reference, to store profile pictures of user
             storageReference = FirebaseStorage.getInstance().getReference("ProfilePicture");
             //get access to UMFs realtime database
             String databaseURL = "https://umfs-2cb55-default-rtdb.asia-southeast1.firebasedatabase.app";
@@ -133,28 +133,20 @@ public class ProfileFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 try {
                     User user = snapshot.getValue(User.class);
-                    //String usernameProfile = snapshot.child("username").getValue().toString();
                     TVUsernameProfile.setText(user.getUsername());
-
-                    //String bioProfile = snapshot.child("Bio").getValue().toString();
                     TVBioProfile.setText(user.getBio());
-
-                    //String facultyProfile = snapshot.child("Faculty").getValue().toString();
                     TVFacultyProfile.setText(user.getFaculty());
-
-                    //String pictureProfile = snapshot.child("ProfilePicture").getValue().toString();
                     Picasso.get().load(user.getProfilePicture()).into(IVProfilePicPage);
                 } catch (Exception e){
-                    Toast.makeText(context, "ERROR ERROR", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Error in Fetching Profile Data", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(), "Error in fetching data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Database Error", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
 

@@ -101,7 +101,7 @@ public class SetupProfileActivity extends AppCompatActivity implements AdapterVi
             //TODO : Cloud Storage reference, to store profile pictures of user
             storageReference = FirebaseStorage.getInstance().getReference("ProfilePicture");
         } catch (Exception e){
-            Toast.makeText(SetupProfileActivity.this, "Error in Cloud Storage", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SetupProfileActivity.this, "Error Connecting to Cloud Storage", Toast.LENGTH_SHORT).show();
         }
 
         try{
@@ -113,7 +113,7 @@ public class SetupProfileActivity extends AppCompatActivity implements AdapterVi
             //reference to specific user file under "Users" node
             userRef = databaseReference.child(currentUserID);
         } catch (Exception e){
-            Toast.makeText(SetupProfileActivity.this, "Error in Realtime Database", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SetupProfileActivity.this, "Error Connecting to Realtime Database", Toast.LENGTH_SHORT).show();
         }
 
         SpinnerFaculty.setOnItemSelectedListener(this);
@@ -231,7 +231,7 @@ public class SetupProfileActivity extends AppCompatActivity implements AdapterVi
                                         picUpdates.put("ProfilePicture", imageUrl);
                                         userRef.updateChildren(picUpdates);
                                         Toast.makeText(SetupProfileActivity.this, "Profile Picture Uploaded", Toast.LENGTH_LONG).show();
-                                        uploadProfile();;
+                                        uploadProfile();
                                     }
                                 });
                             }

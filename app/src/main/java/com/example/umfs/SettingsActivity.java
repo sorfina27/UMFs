@@ -102,8 +102,8 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void openDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Confirm Log Out")
-                .setMessage(R.string.logout_dialog)
+        builder.setTitle("Confirm Log Out?")
+                .setMessage("You can always log back in at any time")
                 .setPositiveButton(R.string.LogOut, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
