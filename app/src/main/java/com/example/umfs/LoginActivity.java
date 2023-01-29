@@ -61,8 +61,8 @@ public class LoginActivity extends AppCompatActivity {
         BTLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String txt_siswamail = ETSiswamail.getText().toString();
-                String txt_password = ETPassword.getText().toString();
+                 String txt_siswamail = ETSiswamail.getText().toString().trim();
+                String txt_password = ETPassword.getText().toString().trim();
 
                 // if format of email doesn't matches return null
                 if (!Patterns.EMAIL_ADDRESS.matcher(txt_siswamail).matches()) {
